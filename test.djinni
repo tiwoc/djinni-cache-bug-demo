@@ -1,0 +1,18 @@
+FooListener = interface +o {
+    foo();
+}
+
+BarListener = interface +o {
+    bar();
+}
+
+Caller = interface +c {
+    static initWithFooListener(fooListener: FooListener, barListener: BarListener): Caller;
+    callFoo();
+    callBar();
+}
+
+StaticCaller = interface +c {
+    static callFooWithListener(listener: FooListener);
+    static callBarWithListener(listener: BarListener);
+}
